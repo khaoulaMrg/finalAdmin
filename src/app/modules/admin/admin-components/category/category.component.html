@@ -1,0 +1,39 @@
+<div class="parent">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+    <div class="child">
+      <div class="imeDiv">
+        <h2 class="form-title"><i class="material-icons">folder</i> Add Category</h2>
+
+      </div>
+
+      <form [formGroup]="catForm" (ngSubmit)="addCategory()">
+
+   
+  <div class="category">
+    <div class="row">
+        <div class="col-12" style="margin-top: 20px; background-color: rgb(238, 245, 245);">
+            <mat-label ><i class="material-icons">category</i>  Catégorie</mat-label>
+            <input class="form-control" placeholder="Titre" formControlName = "category" />
+        </div>
+    </div>
+  </div>
+ 
+  
+  
+  <!-- Fin Section Description -->
+  
+            
+  
+  
+  
+        
+          <button nz-button class="btn-post" 
+          (click)="addCategory()"> Post</button>
+      </form>
+          
+</div>
+        </div>
+       
+      
+  

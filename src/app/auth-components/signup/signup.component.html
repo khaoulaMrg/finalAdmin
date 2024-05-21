@@ -1,0 +1,58 @@
+<div class="bg" style="background-color: #F8F8F8;">
+    <div *ngIf="isSpinning" class="spinner-container">
+        <mat-progress-spinner mode="indeterminate" [diameter]="50" color="primary"></mat-progress-spinner>
+        <div class="spinner-text">Working...</div>
+      </div>
+      
+    <div class="parent">
+      <div class="child">
+        <div class="imgDiv">
+          <mat-toolbar>
+            <h1>الاشتراك</h1>
+          </mat-toolbar>
+        </div>
+        <form [formGroup]="validateForm">
+          <mat-form-field appearance="fill" class="form-field">
+            <mat-label>البريد الالكتروني</mat-label>
+            <input matInput formControlName="email" placeholder="E-mail" id="email" required>
+            <mat-error *ngIf="validateForm.get('email').hasError('required')">
+           أدخل البريد الالكتروني
+            </mat-error>
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill" class="form-field">
+            <mat-label>كلمة المرور </mat-label>
+            <input matInput type="password" formControlName="password" placeholder="Password" id="password" required>
+            <mat-error *ngIf="validateForm.get('password').hasError('required')">
+             أدخل كلمة المرور
+            </mat-error>
+            <mat-error *ngIf="validateForm.get('password').hasError('pattern')">
+              Password should contain 8 characters, 1 lowercase, 1 uppercase, 1 number, and 1 special character.
+            </mat-error>
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill" class="form-field">
+            <mat-label>تأكيد كلمة المرور</mat-label>
+            <input matInput type="password" formControlName="checkPassword" placeholder="Confirm Password" id="checkPassword" required>
+            <mat-error *ngIf="validateForm.get('checkPassword').hasError('required')">
+             تأكيد كلمةالمرور 
+            </mat-error>
+            <mat-error *ngIf="validateForm.get('checkPassword').hasError('confirm')">
+              Two passwords that you enter are inconsistent!
+            </mat-error>
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill" class="form-field">
+            <mat-label>الاسم</mat-label>
+            <input matInput formControlName="name" placeholder="Name" id="username" required>
+            <mat-error *ngIf="validateForm.get('name').hasError('required')">
+              Please input your username!
+            </mat-error>
+          </mat-form-field>
+  
+          <button mat-raised-button color="primary" (click)="register()">الإشتراك</button>
+          Or <a routerLink="/login">login now!</a>
+        </form>
+      </div>
+    </div>
+  </div>

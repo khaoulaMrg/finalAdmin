@@ -1,0 +1,58 @@
+<div *ngIf="!isAdminLoggedIn && !isCustomerLoggedIn ">
+
+  <mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    </button>
+    <span>Aswat</span>
+    <span class="example-spacer"></span>
+    <div class="nav-links">
+      <a nz-button nzType="link" routerLink="/Signup" routerLinkActive="active" >signup</a>
+      <a nz-button nzType="link" routerLink="/login" routerLinkActive="active" >Login</a>
+    </div>
+
+  
+  </mat-toolbar>
+  </div>
+  
+  <div *ngIf="isAdminLoggedIn">
+  
+  
+  <mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Aswat</span>
+    <span class="example-spacer"></span>
+    <div class="nav-links">
+      <a nz-button nzType="link" routerLink="/admin/dashboard" routerLinkActive="active" >Dashboard</a>
+      <a nz-button nzType="link" routerLink="/admin/category" routerLinkActive="active" >Category</a>
+
+  
+      <a nz-button nzType="link" routerLink="/login" routerLinkActive="active" (click)="logout()">Logout</a>
+    </div>
+   
+  </mat-toolbar>
+  
+  </div>
+  
+  
+  <div *ngIf="isCustomerLoggedIn">
+  
+  <mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Aswat</span>
+    <span class="example-spacer"></span>
+    <div class="nav-links">
+      
+      <a nz-button nzType="link" routerLink="/customer/dashboard" routerLinkActive="active" >Publier vos nouvelles </a>
+      <a nz-button nzType="link" routerLink="/login" routerLinkActive="active" (click)="logout()">Logout</a>
+    </div>
+  
+  </mat-toolbar>
+  </div>
+  
+  
+  
+  <router-outlet></router-outlet>
