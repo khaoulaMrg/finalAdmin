@@ -1,36 +1,124 @@
-.parent {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .child {
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .imeDiv {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .form-title {
-    margin-left: 10px;
-  }
-  
-  .category {
-    margin-top: 20px;
-  }
-  
-  .col-12 {
-    margin-top: 10px;
-  }
-  
-  .btn-post {
-    margin-top: 20px;
-  }
-  
+/* Assurez-vous que le body et le html prennent toute la hauteur */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif; /* Utilisation d'une police de caractères lisible */
+  background-color: #f9f9f9; /* Fond léger pour une meilleure visibilité */
+}
+
+
+
+/* Container principale pour centrer le contenu */
+/* Container principale pour centrer le contenu */
+/* Container principale pour centrer le contenu */
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 1500px; 
+  /* Ajustez selon vos besoins */
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #d9d9da;
+  padding-bottom: 50px;
+  text-align: center;
+border-top-left-radius: 30px; 
+border-bottom-right-radius: 30px;
+box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1); /* Légère ombre pour le container */
+}
+
+
+/* Style pour le titre de la page */
+/* Style pour le titre de la page */
+.page-title {
+  padding: 10px;
+  font-size: 3.5em;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-bottom: 40px;
+  color: #3d4885; /* Couleur du titre */
+  margin-top: 80px; /* Ajoute une marge supérieure pour éviter que le titre ne soit caché sous la barre de navigation */
+  position: sticky; /* Positionne le titre de façon à ce qu'il reste visible même en faisant défiler la page */
+  top: 0; /* Alignement du titre en haut de la page */
+  background-color: #d9d9da;
+  z-index: 1000; /* Assure que le titre est au-dessus du contenu */
+}
+
+
+/* Styles pour les conteneurs de formulaires */
+.forms-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px; /* Espacement entre les formulaires */
+  justify-content: center; /* Centrer les formulaires */
+}
+.body {
+  margin: 0; /* Supprimer la marge par défaut */
+  padding: 0; /* Supprimer le remplissage par défaut */
+  display: flex; /* Utiliser Flexbox pour aligner les éléments */
+  flex-direction: column; /* Aligner les éléments verticalement */
+  min-height: 100vh;
+  background-color: #faf7f7;
+}
+
+
+/* Styles pour chaque carte de formulaire */
+.form-card {
+  background-color: #f5f5f5; /* Fond pour les cartes */
+  border-radius: 8px; /* Coins arrondis */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Légère ombre pour les cartes */
+  padding: 20px;
+  flex: 1 1 400px; /* Taille flexible pour les formulaires */
+  max-width: 45%; /* Largeur maximale pour les formulaires */
+  box-sizing: border-box;
+}
+
+/* Styles pour le titre de chaque formulaire */
+.form-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #333; 
+
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  /* Couleur du titre */
+}
+
+/* Styles pour les champs de formulaire */
+.form-field {
+  margin-top: 20px;
+}
+
+/* Styles pour les étiquettes de champ de formulaire */
+.form-field mat-label {
+  font-size: 1.1em;
+  color: #666; /* Couleur légèrement plus foncée pour les étiquettes */
+}
+
+/* Styles pour les entrées de champ de formulaire */
+.form-field input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc; /* Bordure légère pour les entrées */
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Styles pour le bouton de publication */
+.btn-post {
+  margin-top: 20px;
+  background-color: #3d4885; /* Couleur du bouton */
+  color: #fff; /* Couleur du texte du bouton */
+  padding: 10px 20px;
+  border: none;
+
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease; /* Transition fluide pour le survol */
+}
+
+.btn-post:hover {
+  background-color: #666fa1; /* Couleur du bouton au survol */
+}

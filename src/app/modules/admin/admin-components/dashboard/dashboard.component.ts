@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerService } from '../../../customer/customer-services/customer.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { catchError, switchMap } from 'rxjs';
+import { catchError, switchMap, tap } from 'rxjs';
 import { Router } from '@angular/router';
 import { AdminService, PostDTO } from '../../admin-services/admin.service';
 
@@ -44,9 +44,6 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-
-  
-
   approveAndPostPost(post: PostDTO): void {
     console.log('Début de la méthode approveAndPost pour le post ID:', post.id);
     this.adminService.approvePost(post.id).pipe(
@@ -68,4 +65,20 @@ export class DashboardComponent implements OnInit {
       });
     });
   }
+
+  RemovePost(post: PostDTO): void {
+    this.adminService.removePost(post.id)
+      .pipe(
+        tap(() => {
+          // Suppression réussie, mise à jour de la liste des posts
+          this.getAllPosts();
+        })
+      )
+      .subscribe({
+        error: error => {
+          // Gestion des erreurs
+          console.error('Erreur lors de la suppression du post : ', error);
+        }
+      });
+    }
 }

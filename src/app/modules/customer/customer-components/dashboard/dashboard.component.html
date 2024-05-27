@@ -46,6 +46,15 @@
   </div>
 </div>
 
+<div class="category">
+  <div class="row">
+      <div class="col-12"style="margin-top: 20px; background-color: rgb(238, 245, 245);">
+          <mat-label  ><i class="material-icons">text</i> Texte</mat-label>
+          <textarea rows="1" class="form-control" placeholder="Contenu" formControlName="text"></textarea>
+      </div>
+  </div>
+</div>
+
 
 <div class="category">
   <div class="row">
@@ -56,16 +65,24 @@
   </div>
 </div>
 
-
+<mat-form-field appearance="outline" class="form-field">
+  <mat-label>Select a Type</mat-label>
+  <mat-select formControlName="typeId" name="typeId">
+    <mat-option *ngFor="let type of listOfTypes" [value]="type.id">
+      {{ type.type }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
 
 <mat-form-field appearance="outline" class="form-field">
   <mat-label>Select a Category</mat-label>
   <mat-select formControlName="categoryId" name="categoryId">
-    <mat-option *ngFor="let category of listOfCategories"[value]="category.id">
-      {{category.category}}
+    <mat-option *ngFor="let category of listOfCategories" [value]="category.id">
+      {{ category.category }}
     </mat-option>
   </mat-select>
 </mat-form-field>
+
 
 
 

@@ -4,7 +4,9 @@ export interface Post {
     content: string;
     postedBy: string;
     date: Date;
-    categoryId: number; // Changez le type si nécessaire
+    categoryId: number;
+    categoryName: string; // Changez le type si nécessaire
+    // Changez le type si nécessaire
     img: string; // Si l'image est stockée sous forme de chaîne Base64
     picPath: string;
     approved: boolean;

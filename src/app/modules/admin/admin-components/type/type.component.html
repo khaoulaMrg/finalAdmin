@@ -1,0 +1,39 @@
+<div class="parent">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+    <div class="child">
+      <div class="imeDiv">
+        <h2 class="form-title"><i class="material-icons">folder</i> Add Category</h2>
+
+      </div>
+
+      <form [formGroup]="typeForm" (ngSubmit)="addType()">
+
+   
+  <div class="category">
+    <div class="row">
+        <div class="col-12" style="margin-top: 20px; background-color: rgb(238, 245, 245);">
+            <mat-label ><i class="material-icons">type</i>  Type</mat-label>
+            <input class="form-control" placeholder="Titre" formControlName = "type" />
+        </div>
+    </div>
+  </div>
+ 
+  
+  
+  <!-- Fin Section Description -->
+  
+            
+  
+  
+  
+        
+          <button nz-button class="btn-post" 
+          (click)="addType()"> Post</button>
+      </form>
+          
+</div>
+        </div>
+       
+      
+  

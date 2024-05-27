@@ -1,38 +1,38 @@
+<div  class="body">
 
 
-<div class="container" >
-
-<div class="post-list" style="margin-top: 800px;">
-    <mat-card class="post-card" *ngFor="let post of posts">
-
+<div class="container">
+    <h1 class="page-title">Titre Principal de la Page</h1>
+    <div class="post-list">
+      <mat-card class="post-card" *ngFor="let post of posts">
         <div class="post-image">
-            <img [src]="post.processedImg" alt="post-image">
+          <img [src]="post.processedImg" alt="post-image">
         </div>
-
         <div class="post-details">
-            <h2 class="post-name">{{post.name}}</h2>
-            <p class="post-content">{{post.content}}</p>
-
-
-            <mat-driver></mat-driver>
-            <div class="post-info">
-                <div class="info-row">
-            <span class="info-label">Posted by:</span>
-            <span class="info-value">{{post.postedBy}}</span>
-            </div>
-
-
-
+          <h2 class="post-name">{{post.name}}</h2>
+          <p class="post-content">{{post.content}}</p>
+          <p class="post-content">{{post.text}}</p>
+          <mat-divider></mat-divider>
+          <div class="post-info">
             <div class="info-row">
-
-            <span class="info-label">Category:</span>
-            <span class="info-value">{{post.categoryId}}</span>
+              <span class="info-label">Posted by:</span>
+              <span class="info-value">{{post.postedBy}}</span>
             </div>
+            <div class="info-row">
+              <span class="info-label">Category:</span>
+              <span class="info-value">{{ post.categoryName }}</span>
             </div>
+            <div class="info-row">
+              <span class="info-label">Type:</span>
+              <span class="info-value">{{ post.typeName }}</span>
+            </div>
+          </div>
         </div>
-
         <div class="post-actions">
-            <button mat-button color="primary" (click)="approveAndPostPost(post)" >Approuver</button>
+          <button style="background-color: rgb(169, 169, 245);" mat-button color="primary" (click)="approveAndPostPost(post)">Approuver</button>
+          <button style="background-color: rgb(241, 184, 195);" mat-button color="warn" (click)="RemovePost(post)">Rejeter</button>
         </div>
-    </mat-card>
-</div></div>
+      </mat-card>
+    </div>
+  </div>
+</div>

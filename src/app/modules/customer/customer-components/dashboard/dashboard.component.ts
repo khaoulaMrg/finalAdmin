@@ -14,8 +14,15 @@ export class DashboardComponent implements OnInit {
   selectedFile: File | null;
 imagePreview: string | ArrayBuffer | null;
   postForm: FormGroup;
-  listOfCategories:any=[];
+  listOfCategories = [
+    { id: 6, category: 'maroc' },
+    { id: 8, category: 'afrique' },
+    { id: 10, category: 'asie' },
 
+    // Ajoutez d'autres catégories ici
+  ];
+listOfTypes: any;
+  
   constructor(
     private snackBar: MatSnackBar,
     private fb: FormBuilder,
@@ -33,19 +40,44 @@ imagePreview: string | ArrayBuffer | null;
 
       name: [null, Validators.required],
       content: [null, [Validators.required, Validators.maxLength(5000)]],
+      text: [null, [Validators.required, Validators.maxLength(10000)]],
+
       postedBy: [null, Validators.required],
       categoryId: [null, Validators.required],
+      typeId: [null, Validators.required],
+
+
     });
     this.getAllCategories();
+    this.getAllTypes();
+
   }
 
-  getAllCategories(){
-    this.customerService.getAllCategories().subscribe(res=>{
-      this.listOfCategories=res;
-    }
 
-    )
+  getAllTypes(): void {
+    this.customerService.getAllTypes().subscribe({
+      next: (types: any[]) => {
+        this.listOfTypes = types;
+      },
+      error: (error) => {
+        console.error('Erreur lors de la récupération des catégories :', error);
+      }
+    });
   }
+
+  getAllCategories(): void {
+    this.customerService.getAllCategories().subscribe({
+      next: (categories: any[]) => {
+        this.listOfCategories = categories;
+      },
+      error: (error) => {
+        console.error('Erreur lors de la récupération des catégories :', error);
+      }
+    });
+  }
+
+
+
 
   previwImage(){
     const reader = new FileReader();
@@ -65,8 +97,12 @@ imagePreview: string | ArrayBuffer | null;
     formData.append('img',this.selectedFile);
     formData.append('name', this.postForm.get('name').value);
     formData.append('content', this.postForm.get('content').value);
+    formData.append('text', this.postForm.get('text').value);
+
     formData.append('postedBy', this.postForm.get('postedBy').value);
     formData.append('categoryId', this.postForm.get('categoryId').value);
+    formData.append('typeId', this.postForm.get('typeId').value);
+
 
 
     this.customerService.createPost(formData).subscribe((res)=>{

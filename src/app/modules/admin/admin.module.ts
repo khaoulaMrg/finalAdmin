@@ -9,12 +9,14 @@ import { MatInputModule } from '@angular/material/input';
 import { CategoryComponent } from './admin-components/category/category.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { TypeComponent } from './admin-components/type/type.component';
 
 
 @NgModule({
   declarations: [
     DashboardComponent,
-    CategoryComponent
+    CategoryComponent,
+    TypeComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 

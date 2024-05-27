@@ -1,39 +1,39 @@
-<div class="parent">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div  class="body">
+
+
+<div class="container">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   
-    <div class="child">
+  <h1 class="page-title">Gestion des Catégories et Types</h1>
+  
+  <div class="forms-container">
+    <!-- Form for adding category -->
+    <div class="form-card">
       <div class="imeDiv">
-        <h2 class="form-title"><i class="material-icons">folder</i> Add Category</h2>
-
+        <h2 class="form-title"><i class="material-icons">folder</i> Ajouter Catégorie</h2>
       </div>
-
       <form [formGroup]="catForm" (ngSubmit)="addCategory()">
-
-   
-  <div class="category">
-    <div class="row">
-        <div class="col-12" style="margin-top: 20px; background-color: rgb(238, 245, 245);">
-            <mat-label ><i class="material-icons">category</i>  Catégorie</mat-label>
-            <input class="form-control" placeholder="Titre" formControlName = "category" />
+        <div class="form-field">
+          <mat-label><i class="material-icons">category</i> Catégorie</mat-label>
+          <input class="form-control" placeholder="Catégorie" formControlName="category" />
         </div>
+        <button nz-button class="btn-post" type="submit">Post</button>
+      </form>
+    </div>
+  
+    <!-- Form for adding type -->
+    <div class="form-card">
+      <div class="imeDiv">
+        <h2 class="form-title"><i class="material-icons">folder</i> Ajouter Type</h2>
+      </div>
+      <form [formGroup]="typeForm" (ngSubmit)="addType()">
+        <div class="form-field">
+          <mat-label><i class="material-icons">category</i> Type</mat-label>
+          <input class="form-control" placeholder="Type" formControlName="type" />
+        </div>
+        <button nz-button class="btn-post" type="submit">Post</button>
+      </form>
     </div>
   </div>
- 
-  
-  
-  <!-- Fin Section Description -->
-  
-            
-  
-  
-  
-        
-          <button nz-button class="btn-post" 
-          (click)="addCategory()"> Post</button>
-      </form>
-          
 </div>
-        </div>
-       
-      
-  
+</div>

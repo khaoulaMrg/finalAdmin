@@ -21,6 +21,13 @@ getAllCategories(): Observable<any>{
     headers: this.createAuthorizationHeader(),
   })
 }
+getAllTypes(): Observable<any>{
+  return this.http.get(this.SERVER_URL+ "types",{
+    headers: this.createAuthorizationHeader(),
+  })
+}
+
+
 
 getAllPosts():Observable<any>{
   return this.http.get(this.SERVER_URL+"posts",{
