@@ -11,5 +11,6 @@ export interface Post {
     picPath: string;
     approved: boolean;
     posted: boolean;
+    expirationMinutes: number;
   }
   

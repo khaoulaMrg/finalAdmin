@@ -1,39 +1,34 @@
-<div class="parent">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  
-    <div class="child">
-      <div class="imeDiv">
-        <h2 class="form-title"><i class="material-icons">folder</i> Add Category</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Table</title>
+</head>
+<body>
+  <div class="container">
+    <table *ngIf="users" class="user-table">
+      <thead>
+          <tr>
+              <th>Id</th>
+              <th>Nom</th>
+              <th>Adresse Email</th>
+              <th>Décision</th>
 
-      </div>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let user of users">
+              <td>{{ user.id }}</td>
+              <td>{{ user.name }}</td>
+              <td>{{ user.email }}</td>
 
-      <form [formGroup]="typeForm" (ngSubmit)="addType()">
-
-   
-  <div class="category">
-    <div class="row">
-        <div class="col-12" style="margin-top: 20px; background-color: rgb(238, 245, 245);">
-            <mat-label ><i class="material-icons">type</i>  Type</mat-label>
-            <input class="form-control" placeholder="Titre" formControlName = "type" />
-        </div>
-    </div>
+              <td>
+                <button style="background-color: rgb(143, 120, 165); padding: 5px; border-radius: 5px;" (click)="deleteUser(user.id)" class="btn-delete">Supprimer</button>
+            </td>
+          </tr>
+      </tbody>
+    </table>
   </div>
- 
-  
-  
-  <!-- Fin Section Description -->
-  
-            
-  
-  
-  
-        
-          <button nz-button class="btn-post" 
-          (click)="addType()"> Post</button>
-      </form>
-          
-</div>
-        </div>
-       
-      
-  
+</body>
+</html>

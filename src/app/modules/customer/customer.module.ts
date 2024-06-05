@@ -7,7 +7,7 @@ import { MatCardModule } from '@angular/material/card';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormField, MatFormFieldModule, MatLabel } from '@angular/material/form-field';
-import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDatepicker, MatDatepickerModule } from '@angular/material/datepicker';
 import {MatOption, provideNativeDateAdapter} from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatChipsModule } from '@angular/material/chips';
@@ -28,7 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatLabel,MatSelect,MatOption,
     MatFormField,MatSelectModule,
     MatInputModule,FormsModule,
-    HttpClientModule,MatCardModule,MatIconModule
+    HttpClientModule,MatCardModule,MatIconModule,MatDatepicker,    MatDatepickerModule,
+
   ],
  
 })

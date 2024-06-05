@@ -43,10 +43,10 @@ export class DashboardComponent implements OnInit {
       this.posts = posts;
     });
   }
-
   approveAndPostPost(post: PostDTO): void {
     console.log('Début de la méthode approveAndPost pour le post ID:', post.id);
-    this.adminService.approvePost(post.id).pipe(
+    console.log('Temps d\'expiration:', post.expirationMinutes);
+    this.adminService.approvePost(post.id, post.expirationMinutes).pipe(
       catchError(approvalError => {
         console.error('Erreur lors de l\'approbation du post:', approvalError);
         throw approvalError;
@@ -64,7 +64,8 @@ export class DashboardComponent implements OnInit {
         // Peut-être que vous devez effectuer d'autres actions après avoir approuvé et envoyé le post
       });
     });
-  }
+}
+
 
   RemovePost(post: PostDTO): void {
     this.adminService.removePost(post.id)

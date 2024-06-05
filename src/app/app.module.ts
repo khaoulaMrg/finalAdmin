@@ -22,6 +22,7 @@ import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { MatCard, MatCardModule } from '@angular/material/card';
+import { MatDatepicker } from '@angular/material/datepicker';
 
 // Importez HttpClientModule
 @NgModule({
@@ -43,7 +44,7 @@ import { MatCard, MatCardModule } from '@angular/material/card';
     MatFormFieldModule,
     MatProgressSpinnerModule,
     AngularMaterialModule, MatInputModule, BrowserAnimationsModule,
-   MatIconModule, CommonModule, MatToolbarModule
+   MatIconModule, CommonModule, MatToolbarModule,MatDatepicker
   ],
   providers: [
     provideClientHydration(),

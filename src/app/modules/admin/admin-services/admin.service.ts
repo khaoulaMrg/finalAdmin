@@ -14,6 +14,8 @@ export interface PostDTO {
   posted: boolean;
   byteImg: string;
   categoryId: number;
+  expirationMinutes: number;
+
 }
 
 @Injectable({
@@ -49,11 +51,14 @@ export class AdminService {
     return this.http.get<PostDTO>(url);
   }
 
-  approvePost(id: number): Observable<PostDTO> {
-    console.log('Appel API pour approuver un post', id);
-    return this.http.put<PostDTO>(`${this.SERVER_URL}post/${id}/approve`, {});
-  }
- 
+  approvePost(id: number, expirationMinutes: number): Observable<PostDTO> {
+    console.log('Appel API pour approuver un post', id, 'avec expirationMinutes', expirationMinutes);
+    return this.http.put<PostDTO>(`${this.SERVER_URL}post/${id}/approve`, null, {
+        params: {
+            expirationMinutes: expirationMinutes.toString()
+        }
+    });
+}
 
   reapproveAndRepostPost(postId: number): Observable<Post> {
     console.log('Appel API pour réapprouver et reposter un post', postId);
